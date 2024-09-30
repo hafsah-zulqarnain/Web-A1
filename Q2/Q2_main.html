@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Job Application Form</h1>
+        
+        <form id="jobApplicationForm">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="\d{11}"  inputmode="numeric" maxlength="11" required placeholder="Enter 11-digit phone number" title="Please enter exactly 11 digits" >
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+                <label for="zip">ZIP Code:</label>
+                <input type="text" id="zip" name="zip" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Resume and Cover Letter</legend>
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" required>
+                <label for="coverLetter">Cover Letter:</label>
+                <textarea id="coverLetter" name="coverLetter" required></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Education</legend>
+                <label for="educationLevel">Highest Level of Education Attained:</label>
+                <input type="text" id="educationLevel" name="educationLevel" required>
+                <label for="school">Name of School/University:</label>
+                <input type="text" id="school" name="school" required>
+                <label for="major">Major/Area of Study:</label>
+                <input type="text" id="major" name="major" required>
+                <label for="graduationYear">Graduation Year:</label>
+                <input type="date" id="graduationYear" name="graduationYear" mix="1930-00-01" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Employment History</legend>
+                <label for="jobTitle">Previous Job Titles:</label>
+                <input type="text" id="jobTitle" name="jobTitle" required>
+                <label for="company">Company Names:</label>
+                <input type="text" id="company" name="company" required>
+                <label for="employmentstart">Employment Start:</label>
+                <input type="date" id="employmentDates" name="employmentstart" min="1930-00-01"required>
+                <label for="employmentend">Employment End:</label>
+                <input type="date" id="employmentend" name="employmentend" max="2024-09-31" required>
+                <label for="jobResponsibilities">Job Responsibilities:</label>
+                <textarea id="jobResponsibilities" name="jobResponsibilities" required></textarea>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Skills</legend>
+                <label for="skills">Relevant Skills:</label>
+                <textarea id="skills" name="skills" required></textarea>
+                <label for="certifications">Certifications:</label>
+                <textarea id="certifications" name="certifications" required></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Availability</legend>
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" min="2024-09-31" required>
+                <label for="relocate">Willingness to Relocate:</label>
+                <select id="relocate" name="relocate" required>
+                <option value="" >Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                </select>
+                <label for="workSchedule">Preferred Work Schedule:</label>
+                <input type="text" id="workSchedule" name="workSchedule" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>References</legend>
+                <label for="referenceName">Reference Name:</label>
+                <input type="text" id="referenceName" name="referenceName" required>
+                <label for="referenceContact">Reference Contact Information:</label>
+                <input type="tel" id="referenceContact" name="referenceContact" pattern="\d{11}"  inputmode="numeric" maxlength="11" required placeholder="Enter 11-digit phone number" title="Please enter exactly 11 digits" >
+                <label for="email">Email Address:</label>
+                <input type="text" id="email" name="email" required>
+                <label for="relationship">Relationship to Applicant:</label>
+                <input type="text" id="relationship" name="relationship" required>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Additional Questions</legend>
+                <label for="whyCompany">Why do you want to work for this company?</label>
+                <textarea id="whyCompany" name="whyCompany" required></textarea>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Consent and Agreement</legend>
+                <label>
+                    <input type="checkbox" name="terms" required> I agree to the terms and conditions
+                </label>
+                <label>
+                    <input type="checkbox" name="privacy" required> I acknowledge the privacy policy
+                </label>
+            </fieldset>
+
+            <button id="submitButton" type="submit">Submit Application</button>
+        </form>
+        <button id="viewApplications">View Applications as Table</button>
+        <div id="applicationsTable"></div>
+        <button id="resetForm">Fill Form Again</button>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

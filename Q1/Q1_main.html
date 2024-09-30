@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <input type="checkbox" id="menu-toggle" />
+    <label  for="menu-toggle" class="hamburger">Menu</label>
+
+    <ol class="nav-links">
+      <div class="menu-left">
+        <li>
+          <a href="#" class="navbar-logo">
+            <svg
+              role="img"
+              aria-label="Logo Ableton"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="15"
+              viewBox="0 0 40 15"
+            >
+              <path
+                d="M0 0h3v21H0zM6 0h3v21H6zM12 0h3v21h-3zM18 0h3v21h-3zM24 18h21v3H24zM24 12h21v3H24zM24 6h21v3H24zM24 0h21v3H24z"
+              ></path>
+            </svg>
+          </a>
+        </li>
+        <li><a href="#live" id="link-live" class="nav-link" onclick="setActive(this)" >Live</a></li>
+        <li><a href="#push" class="nav-link" onclick="setActive(this)">Push</a></li>
+        <li><a href="#note" class="nav-link" onclick="setActive(this)">Note</a></li>
+        <li><a href="#link" class="nav-link" onclick="setActive(this)">Link</a></li>
+        <li><a href="#shop" class="nav-link" onclick="setActive(this)">Shop</a></li>
+        <li><a href="#pack" class="nav-link" onclick="setActive(this)">Pack</a></li>
+        <li><a href="#help" class="nav-link" onclick="setActive(this)">Help</a></li>
+        <li>
+          <a href="#more" class="navbar-more-toggle nav-link" id="more-toggle" onclick="setActive(this)">
+            More
+          </a>
+          <button class="custom-btn-reset main-nav-more-btn js-toggle-more"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-controls="more-section">
+            <span class="toggle-sign nav-link" onclick="setActive(this)">+</span>
+          </button>
+        </li>
+
+      </div>
+
+      <div class="menu-right">
+        <li><a href="#free-trial" style="color: blue;">Try Live 12 for Free</a></li>
+        <li><a href="#login">Login or Register</a></li>
+      </div>
+    </ol>
+  </nav>
+
+  <div id="more-section" class="content-section">
+    <div class="more-content">
+        <table>
+            <tr>
+                <th class="table-heading" colspan="7">More on Ableton.com:</th>
+            </tr>
+            <tr>
+                <td>Blog</td>
+                <td>Ableton for the Classroom</td>
+                <td>Ableton for Colleges and Universities</td>
+                <td>Certified Training</td>
+                <td>About Ableton</td>
+                <td>Jobs</td>
+                <td>Apprenticeships</td>
+            </tr>
+        </table>
+    </div>
+    <div class="more-content">
+        <table>
+            <tr>
+                <th class="table-heading" colspan="4">More from Ableton:</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Loop</strong><br>
+                    Watch Talks, Performances and Features
+                </td>
+                <td>
+                    <strong>Learning Music</strong><br>
+                    Learn the fundamentals of music making
+                </td>
+                <td>
+                    <strong>Learning Synths</strong><br>
+                    Get started with synthesis using a web-
+                </td>
+                <td>
+                    <strong>Making Music</strong><br>
+                    Some tips from 74 Creative Strategies for
+                </td>
+            </tr>
+            <tr>
+              <td>
+                 from Ableton's Summit for Music Makers
+              </td>
+              <td>
+                  right in your browser.
+              </td>
+              <td>
+                  based synth and accompanying lessons.
+              </td>
+              <td>
+                  Electronic Producers.
+              </td>
+          </tr>
+        </table>
+    </div>
+</div>
+  
+  
+  
+
+  <section id="live" class="content-section">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <div class="menu-left">
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Live 12</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">All new features</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">What is Live?</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Max for Live</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Learn Live</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Integrated hardware</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Compare editions</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Buy now</a></li>
+        </div>
+      </ul>
+    </nav>
+  </section>
+
+  <section id="push" class="content-section">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <div class="menu-left">
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Overview</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Tech specs</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Learn Push</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Upgrade Kit</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Buy now</a></li>
+        </div>
+      </ul>
+    </nav>
+  </section>
+
+  <section id="link" class="content-section">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <div class="menu-left">
+          <li><a href="/" class="nav-link" onclick="setActive(this)">What is Link?</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Link-enabled products</a></li>
+        </div>
+      </ul>
+    </nav>
+  </section>
+
+  <section id="shop" class="content-section">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <div class="menu-left">
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Overview</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Live Push</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Educational offers</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Max for Live</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Making Music</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Merchandise</a></li>
+        </div>
+      </ul>
+    </nav>
+  </section>
+
+  <section id="help" class="content-section">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <div class="menu-left">
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Overview</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Learn Live</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Learn Push</a></li>
+        </div>
+      </ul>
+    </nav>
+  </section>
+
+  <section id="more" class="content-section">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <div class="menu-left">
+          <li><a href="/" class="nav-link" onclick="setActive(this)">About</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Job</a></li>
+          <li><a href="/" class="nav-link" onclick="setActive(this)">Apprenticeships</a></li>
+        </div>
+      </ul>
+    </nav>
+  </section>
+
+ <div class="image-container">
+  <img src="abelton.png" alt="Descriptive Alt Text">
+</div>
+<footer>
+    
+    <h1 style="margin: 20px; font-size: 3em;" >Abelton</h1>
+    <div class="footer-container">
+        <br>
+      <div class="footer-column">
+        <ul>
+          <li><a href="#" >Register Live or Push <strong>></strong></a></li>
+          <li><a href="#">About Ableton <strong>></strong></a></li>
+          <li><a href="#">Jobs <strong>></strong></a></li>
+        </ul>
+        <div class="social-icons">
+          <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+          <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+          <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+          <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+          <a href="#"><img src="tiktok-icon.png" ></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <ul>
+          <li><h3 href="#">Education</h3></li>
+          <li><a href="#">Offers for students and teachers</a></li>
+          <li><a href="#">Find Certified Training</a></li>
+          <li><a href="#">Ableton for Colleges and Schools</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+          <h3>Sign up to our newsletter</h3>
+          <p>Enter your email address to stay up to date.</p>
+          <br>
+          <form>
+            <div class="input-group">
+              <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+              <button type="submit">Sign up</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-container">
+      <div class="footer-column">
+        <ul>
+          <h3>Community</h3>
+          <li><a href="#">Find Ableton User Groups<strong>></strong></a></li>
+          <li><a href="#">Find Certified Training <strong>></strong></a></li>
+          <li><a href="#">Become a Certified Trainer <strong>></strong></a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Location and Language</h3>
+        <div class="dropdown-container">
+            <label for="location"></label>
+            <select id="location" name="location">
+                <option value="Pakistan">Pakistan</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+            </select>
+    
+            <label for="language"></label>
+            <select id="language" name="language">
+                <option value="English">English</option>
+                <option value="Deutsch">Deutsch</option>
+                <option value="Espanol">Espanol</option>
+            </select>
+        </div>
+    </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Press Resources</a></li>
+          <li><a href="#">Legal Info</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Settings</a></li>
+          <li><a href="#">Imprint</a></li>
+  
+          <!-- Right-aligned section -->
+          <div class="right-align">
+            <li><a href="#">Made in Berlin</a></li>
+            <li>
+              <a href="#" class="navbar-logo">
+                <svg
+                  role="img"
+                  aria-label="Logo Ableton"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="20"
+                  viewBox="0 0 40 20"
+                >
+                  <path
+                    d="M0 0h3v21H0zM6 0h3v21H6zM12 0h3v21h-3zM18 0h3v21h-3zM24 18h21v3H24zM24 12h21v3H24zM24 6h21v3H24zM24 0h21v3H24z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </div>
+      </ul>
+  </div>
+  
+  </footer>
+  <script>
+    $(document).ready(function () {
+      $('.js-toggle-more').on('click', function () {
+        const moreSection = $('#more-section');
+        const isExpanded = $(this).attr('aria-expanded') === 'true';
+
+   
+        $(this).attr('aria-expanded', !isExpanded);
+
+        if (isExpanded) {
+
+          moreSection.slideUp();
+          $(this).find('.toggle-sign').text('+');
+        } else {
+          moreSection.slideDown();
+          $(this).find('.toggle-sign').text('-');
+        }
+      });
+    });
+    function setActive(link) {
+        const links = document.querySelectorAll('.nav-link');
+        links.forEach((l) => {
+            l.classList.remove('active');
+        });
+
+        link.classList.add('active');
+    }
+
+    
+    
+  </script>
+</body>
+
+</html>
