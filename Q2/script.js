@@ -1,53 +1,79 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("jobApplicationForm");
-
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        let valid = true;
-
+    document.getElementById("jobApplicationForm").addEventListener("submit", function (event) {
+        event.preventDefault(); 
+    
         const errorMessages = document.querySelectorAll(".error-message");
-        errorMessages.forEach((msg) => msg.remove());
-
-        const firstName = document.getElementById("firstName");
-        if (firstName.value.trim() === "") {
-            displayError(firstName, "First Name is required.");
-            valid = false;
+        errorMessages.forEach(message => message.remove());
+    
+        let isValid = true;
+    
+        function showError(input, message) {
+            const errorMessage = document.createElement("div");
+            errorMessage.className = "error-message";
+            errorMessage.style.color = "red";
+            errorMessage.innerText = message;
+            input.parentNode.insertBefore(errorMessage, input.nextSibling);
+            isValid = false;
         }
+    
 
-        const lastName = document.getElementById("lastName");
-        if (lastName.value.trim() === "") {
-            displayError(lastName, "Last Name is required.");
-            valid = false;
+        function validateAddress(element) {
+            const addressPattern = /^[\d\s\w.,-]+$/; 
+            if (!addressPattern.test(element.value.trim())) {
+                displayError(element, "Address must contain numbers and letters.");
+                return false; 
+            }
+            return true; 
         }
-
-        const phone = document.getElementById("phone");
-        const phonePattern = /^\d{11}$/;
-        if (!phonePattern.test(phone.value.trim())) {
-            displayError(phone, "Phone number must be exactly 11 digits.");
-            valid = false;
+        function validateTextInput(input, minLength) {
+            if (input.value.trim() === "") {
+                showError(input, "This field is required.");
+            } else if (input.value.length < minLength) {
+                showError(input, `Minimum length is ${minLength} characters.`);
+            } else if (!/^[a-zA-Z\s]*$/.test(input.value)) {
+                showError(input, "Only letters and spaces are allowed.");
+            }
         }
-
-        const email = document.getElementById("email");
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email.value.trim())) {
-            displayError(email, "Please enter a valid email address.");
-            valid = false;
+    
+        function validatePhoneNumber(input) {
+            if (input.value && !/^\+?[0-9\s-]{7,15}$/.test(input.value)) {
+                showError(input, "Please enter a valid phone number.");
+            }
         }
-
-        const zip = document.getElementById("zip");
-        const zipPattern = /^\d{5}$/; 
-        if (!zipPattern.test(zip.value.trim())) {
-            displayError(zip, "ZIP Code must be exactly 5 digits.");
-            valid = false;
+    
+        function validateZipCode(input) {
+            if (input.value && !/^\d{5}(-\d{4})?$/.test(input.value)) {
+                showError(input, "Please enter a valid ZIP code.");
+            }
         }
-
-        const resume = document.getElementById("resume");
-        if (resume.files.length === 0) {
-            displayError(resume, "Please upload your resume.");
-            valid = false;
+    
+        function validateEmail(input) {
+            if (input.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+                showError(input, "Please enter a valid email address.");
+            }
         }
+    
+        validateTextInput(document.getElementById("firstName"), 2);
+        validateTextInput(document.getElementById("lastName"), 2);
+        validatePhoneNumber(document.getElementById("phone"));
+        validateEmail(document.getElementById("email"));
+        validateAddress(document.getElementById("address"), 50);
+        validateTextInput(document.getElementById("city"), 3);
+        validateTextInput(document.getElementById("state"), 2);
+        validateZipCode(document.getElementById("zip"));
+        validateTextInput(document.getElementById("educationLevel"), 2);
+        validateTextInput(document.getElementById("school"), 2);
+        validateTextInput(document.getElementById("major"), 2);
+        validateTextInput(document.getElementById("jobTitle"), 2);
+        validateTextInput(document.getElementById("company"), 2);
+        validateTextInput(document.getElementById("workSchedule"), 3);
+        validateTextInput(document.getElementById("referenceName"), 2);
+        validateEmail(document.getElementById("emailRef"));
+        validateTextInput(document.getElementById("relationship"), 2);
+        validateTextInput(document.getElementById("whyCompany"), 10);
 
-        if (valid) {
+
+        if (isValid) {
             const formData = new FormData(event.target);
             const data = {};
             formData.forEach((value, key) => {
@@ -57,9 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
             let applications = JSON.parse(localStorage.getItem('applications')) || [];
             applications.push(data);
             localStorage.setItem('applications', JSON.stringify(applications));
-
             alert('Application submitted successfully!');
-            form.reset();
+            event.target.reset(); 
         }
     });
 
@@ -68,8 +93,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const applications = JSON.parse(localStorage.getItem('applications')) || [];
         const table = document.createElement('table');
         table.className = 'pretty-table';
+    
+        applications.forEach((application, index) => {
 
-        applications.forEach(application => {
+            const userHeadingRow = table.insertRow();
+            const userHeadingCell = userHeadingRow.insertCell();
+            userHeadingCell.colSpan = 2;
+            userHeadingCell.textContent = `User No: ${index + 1}`;
+            userHeadingCell.className = 'user-heading'; 
+            userHeadingCell.style.fontWeight = 'bold'
             Object.keys(application).forEach(key => {
                 const row = table.insertRow();
                 const cellKey = row.insertCell();
@@ -78,11 +110,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 cellValue.textContent = application[key];
             });
         });
-
+    
         const applicationsTable = document.getElementById('applicationsTable');
-        applicationsTable.innerHTML = '';
-        applicationsTable.appendChild(table);
+        applicationsTable.innerHTML = '';  
+        applicationsTable.appendChild(table);  
     });
+    
 
     function displayError(element, message) {
         const error = document.createElement("span");
@@ -92,12 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
         element.parentNode.insertBefore(error, element.nextSibling);
     }
 
-    document.getElementById('resetForm').addEventListener('click', function() {
-        localStorage.clear();
-        document.getElementById('applicationsTable').innerHTML = '';
-        document.getElementById('myForm').reset();
-
-      });
+    
 });
 
 

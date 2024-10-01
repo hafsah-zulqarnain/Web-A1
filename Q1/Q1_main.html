@@ -13,29 +13,31 @@
 <body>
 
   <nav class="navbar">
-    <input type="checkbox" id="menu-toggle" />
-    <label  for="menu-toggle" class="hamburger">Menu</label>
+   
+    
+    <div class="navbar-logo-container">
+      <a href="#" class="navbar-logo">
+        <svg
+          role="img"
+          aria-label="Logo Ableton"
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="15"
+          viewBox="0 0 40 15"
+        >
+          <path
+            d="M0 0h3v21H0zM6 0h3v21H6zM12 0h3v21h-3zM18 0h3v21h-3zM24 18h21v3H24zM24 12h21v3H24zM24 6h21v3H24zM24 0h21v3H24z"
+          ></path>
+        </svg>
 
+      </a>
+      
+    </div>
+      <label for="menu-toggle" class="hamburger">Menu</label>
+      <input type="checkbox" id="menu-toggle" />
     <ol class="nav-links">
       <div class="menu-left">
-        <li>
-          <a href="#" class="navbar-logo">
-            <svg
-              role="img"
-              aria-label="Logo Ableton"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="15"
-              viewBox="0 0 40 15"
-            >
-              <path
-                d="M0 0h3v21H0zM6 0h3v21H6zM12 0h3v21h-3zM18 0h3v21h-3zM24 18h21v3H24zM24 12h21v3H24zM24 6h21v3H24zM24 0h21v3H24z"
-              ></path>
-            </svg>
-          </a>
-        </li>
-        <li><a href="#live" id="link-live" class="nav-link" onclick="setActive(this)" >Live</a></li>
+        <li><a href="#live" class="nav-link" onclick="setActive(this)">Live</a></li>
         <li><a href="#push" class="nav-link" onclick="setActive(this)">Push</a></li>
         <li><a href="#note" class="nav-link" onclick="setActive(this)">Note</a></li>
         <li><a href="#link" class="nav-link" onclick="setActive(this)">Link</a></li>
@@ -43,7 +45,7 @@
         <li><a href="#pack" class="nav-link" onclick="setActive(this)">Pack</a></li>
         <li><a href="#help" class="nav-link" onclick="setActive(this)">Help</a></li>
         <li>
-          <a href="#more" class="navbar-more-toggle nav-link" id="more-toggle" onclick="setActive(this)">
+          <a href="#more" id="link-live" class="navbar-more-toggle nav-link" id="more-toggle" onclick="setActive(this)">
             More
           </a>
           <button class="custom-btn-reset main-nav-more-btn js-toggle-more"
@@ -53,14 +55,15 @@
             <span class="toggle-sign nav-link" onclick="setActive(this)">+</span>
           </button>
         </li>
-
       </div>
-
+  
       <div class="menu-right">
         <li><a href="#free-trial" style="color: blue;">Try Live 12 for Free</a></li>
         <li><a href="#login">Login or Register</a></li>
       </div>
     </ol>
+
+
   </nav>
 
   <div id="more-section" class="content-section">
@@ -121,85 +124,15 @@
     </div>
 </div>
   
-  
-  
-
-  <section id="live" class="content-section">
-    <nav class="navbar">
-      <ul class="nav-links">
-        <div class="menu-left">
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Live 12</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">All new features</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">What is Live?</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Max for Live</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Learn Live</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Integrated hardware</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Compare editions</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Buy now</a></li>
-        </div>
-      </ul>
-    </nav>
-  </section>
-
-  <section id="push" class="content-section">
-    <nav class="navbar">
-      <ul class="nav-links">
-        <div class="menu-left">
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Overview</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Tech specs</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Learn Push</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Upgrade Kit</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Buy now</a></li>
-        </div>
-      </ul>
-    </nav>
-  </section>
-
-  <section id="link" class="content-section">
-    <nav class="navbar">
-      <ul class="nav-links">
-        <div class="menu-left">
-          <li><a href="/" class="nav-link" onclick="setActive(this)">What is Link?</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Link-enabled products</a></li>
-        </div>
-      </ul>
-    </nav>
-  </section>
-
-  <section id="shop" class="content-section">
-    <nav class="navbar">
-      <ul class="nav-links">
-        <div class="menu-left">
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Overview</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Live Push</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Educational offers</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Max for Live</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Making Music</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Merchandise</a></li>
-        </div>
-      </ul>
-    </nav>
-  </section>
-
-  <section id="help" class="content-section">
-    <nav class="navbar">
-      <ul class="nav-links">
-        <div class="menu-left">
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Overview</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Learn Live</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Learn Push</a></li>
-        </div>
-      </ul>
-    </nav>
-  </section>
+<div class="line"></div>
 
   <section id="more" class="content-section">
     <nav class="navbar">
-      <ul class="nav-links">
-        <div class="menu-left">
-          <li><a href="/" class="nav-link" onclick="setActive(this)">About</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Job</a></li>
-          <li><a href="/" class="nav-link" onclick="setActive(this)">Apprenticeships</a></li>
+      <ul class="nav-links-a">
+        <div class="menu-left-a">
+          <li><a  class="nav-link-a" onclick="setActive(this)">About</a></li>
+          <li><a  class="nav-link-a" onclick="setActive(this)">Job</a></li>
+          <li><a class="nav-link-a" onclick="setActive(this)">Apprenticeships</a></li>
         </div>
       </ul>
     </nav>

@@ -18,7 +18,7 @@
                 <label for="lastName">Last Name:</label>
                 <input type="text" id="lastName" name="lastName" required>
                 <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" pattern="\d{11}"  inputmode="numeric" maxlength="11" required placeholder="Enter 11-digit phone number" title="Please enter exactly 11 digits" >
+                <input type="tel" id="phone" name="phone" >
                 <label for="email">Email Address:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="address">Address:</label>
@@ -48,7 +48,7 @@
                 <label for="major">Major/Area of Study:</label>
                 <input type="text" id="major" name="major" required>
                 <label for="graduationYear">Graduation Year:</label>
-                <input type="date" id="graduationYear" name="graduationYear" mix="1930-00-01" required>
+                <input type="date" id="graduationYear" name="graduationYear" required>
             </fieldset>
 
             <fieldset>
@@ -58,9 +58,9 @@
                 <label for="company">Company Names:</label>
                 <input type="text" id="company" name="company" required>
                 <label for="employmentstart">Employment Start:</label>
-                <input type="date" id="employmentDates" name="employmentstart" min="1930-00-01"required>
+                <input type="date" id="employmentDates" name="employmentstart"required>
                 <label for="employmentend">Employment End:</label>
-                <input type="date" id="employmentend" name="employmentend" max="2024-09-31" required>
+                <input type="date" id="employmentend" name="employmentend"  required>
                 <label for="jobResponsibilities">Job Responsibilities:</label>
                 <textarea id="jobResponsibilities" name="jobResponsibilities" required></textarea>
             </fieldset>
@@ -77,7 +77,7 @@
             <fieldset>
                 <legend>Availability</legend>
                 <label for="startDate">Start Date:</label>
-                <input type="date" id="startDate" name="startDate" min="2024-09-31" required>
+                <input type="date" id="startDate" name="startDate" required>
                 <label for="relocate">Willingness to Relocate:</label>
                 <select id="relocate" name="relocate" required>
                 <option value="" >Select an option</option>
@@ -93,9 +93,9 @@
                 <label for="referenceName">Reference Name:</label>
                 <input type="text" id="referenceName" name="referenceName" required>
                 <label for="referenceContact">Reference Contact Information:</label>
-                <input type="tel" id="referenceContact" name="referenceContact" pattern="\d{11}"  inputmode="numeric" maxlength="11" required placeholder="Enter 11-digit phone number" title="Please enter exactly 11 digits" >
+                <input type="tel" id="referenceContact" name="referenceContact"  >
                 <label for="email">Email Address:</label>
-                <input type="text" id="email" name="email" required>
+                <input type="text" id="emailRef" name="email" required>
                 <label for="relationship">Relationship to Applicant:</label>
                 <input type="text" id="relationship" name="relationship" required>
             </fieldset>
@@ -122,7 +122,6 @@
         </form>
         <button id="viewApplications">View Applications as Table</button>
         <div id="applicationsTable"></div>
-        <button id="resetForm">Fill Form Again</button>
         
     </div>
 

@@ -11,9 +11,14 @@
 
   #menu-toggle {
     opacity: 0; 
-    position: absolute;
     pointer-events: none; 
   }
+
+  .line {
+    height: 2px;
+    background-color: #e2e2e2;
+  }
+  
 
 .content-section {
     margin: 10px;
@@ -74,9 +79,15 @@ td strong {
     display: flex;
     align-items: center;
     margin-right: 20px;
+    margin-top: 10px;
   }
   
   .menu-left {
+    display: flex;
+    gap: 20px;
+  }
+
+  .menu-left-a {
     display: flex;
     gap: 20px;
   }
@@ -255,7 +266,7 @@ td strong {
 
 .image-container img {
   max-width: 4096px;
-  height: 512px;
+  height: 700px;
 }
 
 
@@ -286,6 +297,18 @@ td strong {
 }
 
 
+.nav-links-a{
+  list-style: none;
+  width: 100%;
+  font-weight: bold;
+  justify-content: space-between;
+}
+ 
+.nav-link-a {
+  padding: 10px 0;
+  text-align: left;
+  color: #000;
+}
   .nav-link.active {
     color: rgba(255, 115, 0, 0.89); 
   }
@@ -337,20 +360,34 @@ label {
   }
   
   @media (max-width: 768px) {
-    body{
-      background-color: blue;
+  .navbar{
+    flex-direction: row;
+  }
+    nav{
+      background-color: #ccc;
     }
 
-    nav{
-      background-color:blue;
+    .nav-links-a{
+      list-style: none;
+      width: 100%;
+      font-weight: bold;
+    }
+     
+    .nav-link-a {
+      padding: 2px;
+      text-align: left;
+      color: #000;
+    }
+
+    .nav-links-a li {
+      flex: 1; 
     }
     .nav-links {
-      position: absolute;
+    width: 100%;
       top: 60px;
       left: 0;
       right: 0;
-      background-color: blue;
-      color: #f0f0f0;
+      color: #000000;
       flex-direction: column;
       align-items: left;
       gap: 20px;
@@ -359,25 +396,38 @@ label {
       transition: max-height 0.3s ease;
     }
   
-    .navbar{
-      background-color: blue;
-    }
+     .navbar{
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: white;
+    } 
     label{
-      color: white;
+      color: rgb(0, 0, 0);
     }
 
-    .hamburger { 
-      color: white;
-  }
+    .nav-link {
+      padding: 10px 0;
+      text-align: left;
+    }
 
     .nav-links a{
         align-items: center;
-        color: white;
+        color: rgb(0, 0, 0);
+      }
+
+      .menu-left-a{
+        display: flex;
+        gap: 5px;
       }
     
     .hamburger {
-      display: block; 
+      display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+      color: rgb(0, 0, 0);
     }
+
+    
   
     .menu-left,
     .menu-right {
@@ -385,8 +435,8 @@ label {
     }
 
     #menu-toggle:checked ~ .nav-links {
-      max-height: 1000px; 
-      overflow: visible;
+
+      max-height: 1200px; 
     }
 
     .footer-container {
@@ -435,36 +485,61 @@ label {
       .image-container {
         width: 100%;
         max-width: 600px; 
-        margin: 0 auto; 
+        margin: 50px auto; 
     }
     
     .footer-column {
       flex-direction: column;
+      align-self: start;
     }
 
+    .navbar-logo {
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+   
     #menu-toggle:checked ~ .nav-links {
       display: flex;
-      position: absolute;
-      top: 50px;
       left: 0;
-      background-color: blue;
       width: 100%;
-      z-index: 100;
-      padding: 10px 0;
+      height: 570px;
+      color: #000;
+      background-color: #ffffff;
+      
     }
+    
 
   
   .image-container img {
       width: 100vw;         
-      height: auto;          
+      height: 900px;          
       max-height: 100vh;     
-      object-fit: cover;    
+      object-fit: cover; 
+      margin-left: auto;   
   }
   
-    .content-section {
-      transition: margin-top 0.3s ease;
-    }
+  
     
+    
+    #more-section .table-heading {
+      color: rgb(0, 0, 0); 
+      font-size:medium;
+      text-align: left;
+    }
+    #more-section td {
+        color: rgb(0, 0, 0); 
+        font-size:smaller;
+        text-align: left;
+    }
+
+    #more-section strong {
+      color: rgb(0, 0, 0);
+      font-size:small;
+      text-align: left;
+  }
+
+  
+ 
   }
 
 
